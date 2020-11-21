@@ -6,6 +6,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Scully
+
+Run `ng build --prod` then run `npm run scully -- --scanRoutes` to build the app with Scully.
+
+Run `npm run scully:serve` to serve both the static version of the site and the Angular version.
+
+To deploy, simply serve/copy `dist/static`.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
