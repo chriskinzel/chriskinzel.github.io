@@ -1,0 +1,34 @@
+h1 {
+  font-size: 300%;
+  line-height: 250%;
+
+  margin-left: var(--header-undent);
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  margin-bottom: 2rem;
+
+  margin-left: -1rem;
+  margin-right: -4rem;
+}
+
+ck-education-item {
+  flex: 1;
+  min-width: 300px;
+  font-size: 50%;
+}
+
+ck-education-item:not(:last-child) {
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  ck-education-item {
+    font-size: 165%;
+  }
+}

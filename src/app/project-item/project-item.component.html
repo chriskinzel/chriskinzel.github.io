@@ -1,0 +1,34 @@
+<ng-template #infoTemplate>
+  <h1>{{ name }}</h1>
+  <div class="project-tech">
+    <img
+      src="assets/images/angular.png"
+      class="tech-icon"
+      *ngIf="usesAngular"
+    />
+    <img src="assets/images/aws.png" class="tech-icon" *ngIf="usesAWS" />
+    <img src="assets/images/nodejs.png" class="tech-icon" *ngIf="usesNodeJs" />
+    <img src="assets/images/ios.png" class="tech-icon" *ngIf="usesiOS" />
+    <img
+      src="assets/images/android.png"
+      class="tech-icon"
+      *ngIf="usesAndroid"
+    />
+    <img src="assets/images/rails.png" class="tech-icon" *ngIf="usesRails" />
+    <img src="assets/images/spark.png" class="tech-icon" *ngIf="usesSpark" />
+    <img src="assets/images/webgl.png" class="tech-icon" *ngIf="usesWebGL" />
+  </div>
+  <p><ng-content></ng-content></p>
+</ng-template>
+
+<div class="wrapper" [class.card-style]="shouldUseCardDisplay | async">
+  <img class="project-img" [src]="imageUrl" />
+  <div class="project-info" *ngIf="!(shouldUseCardDisplay | async)">
+    <ng-container *ngTemplateOutlet="infoTemplate"></ng-container>
+  </div>
+
+  <mat-card *ngIf="shouldUseCardDisplay | async">
+    <img class="project-img" [src]="imageUrl" />
+    <ng-container *ngTemplateOutlet="infoTemplate"></ng-container>
+  </mat-card>
+</div>

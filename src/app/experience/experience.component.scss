@@ -1,0 +1,35 @@
+h1 {
+  font-size: 300%;
+  line-height: 250%;
+  margin-left: var(--header-undent);
+}
+
+.tech-section {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 133%;
+  line-height: 166%;
+}
+
+.tech-list {
+  margin-bottom: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.5rem 0;
+
+  .tech-item {
+    display: flex;
+    align-items: center;
+
+    .icon-img {
+      width: 2.5em;
+      margin-right: 0.5rem;
+    }
+    font-size: 125%;
+    line-height: normal;
+  }
+}

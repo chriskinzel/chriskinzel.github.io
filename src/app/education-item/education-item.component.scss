@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  height: 5rem;
+  margin-right: 0.75rem;
+}
+
+.info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.degree-info {
+  line-height: normal;
+  max-width: 60vw;
+}
+
+.faded {
+  opacity: 0.7;
+}
+
+.degree-info,
+.faded {
+  font-size: 100%;
+}

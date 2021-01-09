@@ -1,0 +1,45 @@
+h1 {
+  font-size: 300%;
+  line-height: 250%;
+
+  margin-left: var(--header-undent);
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wrapper {
+  a {
+    display: flex;
+    align-items: center;
+
+    color: inherit;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+
+    margin: 0 1rem 3rem;
+  }
+
+  a:hover .text {
+    text-decoration: underline;
+  }
+
+  fa-icon,
+  .emoji {
+    color: inherit;
+    font-size: 200%;
+  }
+}
+
+@media (max-width: 540px) {
+  .wrapper {
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    font-size: 175%;
+  }
+}

@@ -5,7 +5,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 const routes: Routes = [{ path: '', component: HomePageComponent }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

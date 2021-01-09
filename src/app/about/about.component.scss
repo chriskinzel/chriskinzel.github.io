@@ -1,0 +1,86 @@
+h1 {
+  font-size: 400%;
+  line-height: 150%;
+}
+
+h2 {
+  font-size: 450%;
+  line-height: 125%;
+}
+
+.summary {
+  font-size: 133%;
+  line-height: 166%;
+}
+
+.resume-actions {
+  display: flex;
+
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+::ng-deep .mobile {
+  .resume-actions {
+    justify-content: center;
+  }
+}
+
+.resume-action {
+  font-size: 110%;
+  padding: 0.75em;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+.resume-action:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.hand-emoji {
+  display: inline-block;
+
+  font-size: 90%;
+
+  animation-name: about-component-wave;
+  animation-duration: 0.13s;
+  animation-delay: 0.9s;
+  animation-direction: alternate;
+  animation-iteration-count: 6;
+  animation-timing-function: ease-in-out;
+
+  transform-origin: 70% 55%;
+}
+
+@keyframes about-component-wave {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(35deg);
+  }
+}
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 340%;
+    line-height: 150%;
+  }
+
+  h2 {
+    font-size: 365%;
+    line-height: 125%;
+  }
+
+  .summary {
+    font-size: 170%;
+    line-height: 190%;
+  }
+
+  .resume-actions {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .resume-action {
+    padding: 0 0.75em;
+  }
+}

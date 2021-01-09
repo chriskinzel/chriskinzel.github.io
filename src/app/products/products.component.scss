@@ -1,0 +1,30 @@
+h1 {
+  font-size: 300%;
+  line-height: 250%;
+  margin-left: var(--header-undent);
+}
+
+p {
+  font-size: 133%;
+  line-height: 166%;
+}
+
+.projects-section p {
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+
+  margin-bottom: 3rem;
+}
+
+ck-project-item[name="CSI Dry Eye"] {
+  --overlay-opacity: 0.7;
+}
+ck-project-item[name="FaceTouchUp"] {
+  --icon-height: 25px;
+}

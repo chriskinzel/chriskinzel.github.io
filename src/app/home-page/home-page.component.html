@@ -1,1 +1,105 @@
-<p>home-page works!</p>
+<mat-sidenav-container
+  autosize
+  [hasBackdrop]="!(shouldDefaultShowingDrawer | async)"
+  [class.mobile]="!(shouldDefaultShowingDrawer | async)"
+  (backdropClick)="openDrawer.emit(false)"
+>
+  <mat-sidenav
+    [mode]="(shouldDefaultShowingDrawer | async) ? 'side' : 'over'"
+    [disableClose]="shouldDefaultShowingDrawer | async"
+    [opened]="shouldShowDrawer | async"
+    role="navigation"
+  >
+    <div class="center" *ngIf="shouldDefaultShowingDrawer | async">
+      <img
+        class="profile-picture"
+        src="../../assets/images/headshot.png"
+        alt="A picture of Chris Kinzel"
+      />
+    </div>
+
+    <mat-list class="center">
+      <a mat-list-item href="#about" (click)="scrollToAnchor('#about')"
+        ><span matListIcon>ℹ️</span>About</a
+      >
+      <a
+        mat-list-item
+        href="#experience"
+        (click)="scrollToAnchor('#experience')"
+        ><span matListIcon>💼</span>Experience</a
+      >
+      <a mat-list-item href="#education" (click)="scrollToAnchor('#education')"
+        ><span matListIcon>🎓</span>Education</a
+      >
+      <a mat-list-item href="#contact" (click)="scrollToAnchor('#contact')"
+        ><span matListIcon>📧</span>Contact</a
+      >
+    </mat-list>
+
+    <div class="spacer"></div>
+
+    <a
+      mat-stroked-button
+      class="resume-btn"
+      color="secondary"
+      href="assets/resume.pdf"
+      download="chriskinzel-resume.pdf"
+      >⬇️ Download Resume</a
+    >
+
+    <a
+      mat-stroked-button
+      class="resume-btn"
+      color="secondary"
+      target="_blank"
+      href="assets/resume.pdf"
+      >📑️ View Resume</a
+    >
+
+    <div class="spacer"></div>
+
+    <div class="footer">
+      <a
+        class="footer-item"
+        href="https://github.com/chriskinzel"
+        target="_blank"
+        ><fa-icon [icon]="githubIcon"></fa-icon
+      ></a>
+      <a class="footer-item" href="mailto:chriskinzel13@gmail.com"
+        ><fa-icon [icon]="emailIcon"></fa-icon
+      ></a>
+      <a
+        class="footer-item"
+        href="https://www.linkedin.com/in/chris-kinzel-2b5b51132"
+        target="_blank"
+        ><fa-icon [icon]="linkedInIcon"></fa-icon
+      ></a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content #sidenavContent role="main">
+    <mat-icon
+      class="menu-btn"
+      [hidden]="!(shouldDefaultShowingDrawer | async)"
+      (click)="openDrawer.emit(true)"
+      >menu</mat-icon
+    >
+
+    <mat-card id="about">
+      <div class="center" *ngIf="!(shouldDefaultShowingDrawer | async)">
+        <img
+          *ngIf="!(shouldDefaultShowingDrawer | async)"
+          class="profile-picture"
+          src="../../assets/images/headshot.png"
+          alt="A picture of Chris Kinzel"
+        />
+      </div>
+
+      <ck-about></ck-about>
+    </mat-card>
+
+    <mat-card id="experience"><ck-experience></ck-experience></mat-card>
+    <mat-card><ck-products></ck-products></mat-card>
+    <mat-card id="education"><ck-education></ck-education></mat-card>
+    <mat-card id="contact"><ck-contact></ck-contact></mat-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>

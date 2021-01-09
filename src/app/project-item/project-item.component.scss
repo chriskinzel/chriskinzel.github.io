@@ -1,0 +1,91 @@
+:host {
+  color: black;
+  --overlay-opacity: 0.5;
+  --icon-height: 35px;
+}
+
+.wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 150%;
+  font-weight: 500;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.project-img,
+.project-info {
+  border-radius: 5px;
+}
+
+.project-img {
+  width: 100%;
+}
+
+.project-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0;
+
+  background-color: rgba(255, 255, 255, var(--overlay-opacity));
+  padding: 0.5rem 1rem;
+
+  transition: opacity 0.4s;
+}
+
+.wrapper:hover:not(.card-style) {
+  .project-img {
+    filter: blur(4px);
+  }
+  .project-info {
+    opacity: 1;
+  }
+}
+
+.project-img:hover ~ mat-card {
+  opacity: 1;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-bottom: calc(var(--icon-height) / 2);
+}
+
+.tech-icon {
+  height: var(--icon-height);
+  margin: 0 0.5rem;
+}
+
+p {
+  font-size: 100%;
+  line-height: 133%;
+}
+
+mat-card {
+  position: fixed;
+  top: 0;
+  left: 50%;
+
+  width: 75%;
+
+  font-size: 150%;
+
+  transform: translate(-50%);
+
+  margin-top: 1rem;
+
+  opacity: 0;
+  transition: opacity 0.4s;
+
+  z-index: 10;
+}
