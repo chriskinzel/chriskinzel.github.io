@@ -22,7 +22,11 @@ h1 {
 }
 
 .project-img {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
   width: 100%;
+  transition: width 0.5s, margin 0.5s, z-index 1s;
 }
 
 .project-info {
@@ -31,6 +35,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
 
   opacity: 0;
 
@@ -38,6 +43,18 @@ h1 {
   padding: 0.5rem 1rem;
 
   transition: opacity 0.4s;
+
+  width: calc(100% - var(--grid-gap));
+}
+.wrapper.card-style {
+  cursor: default;
+
+  .project-info {
+    transition: opacity 0s 0s, margin 0.5s;
+    font-size: 150%;
+    margin-bottom: -100%;
+    z-index: 0;
+  }
 }
 
 .wrapper:hover:not(.card-style) {
@@ -49,8 +66,30 @@ h1 {
   }
 }
 
-.project-img:hover ~ mat-card {
-  opacity: 1;
+.wrapper.card-style.enlarged {
+  .project-info {
+    --overlay-opacity: 0.9;
+
+    transition: opacity 0.5s 0.4s, margin 0.5s;
+
+    position: static;
+    opacity: 1;
+    margin-top: -1rem;
+    padding-top: 1rem;
+
+    margin-bottom: 0;
+
+    width: 200%;
+  }
+  .project-img {
+    width: calc(200% + var(--grid-gap) + 1px);
+    z-index: 2;
+    transition: width 0.5s, margin 0.5s, z-index 0s;
+  }
+  .project-img,
+  .project-info {
+    margin-left: calc((-100% - var(--grid-gap) - 1px) * var(--is-right-child));
+  }
 }
 
 .project-tech {
@@ -69,23 +108,4 @@ h1 {
 p {
   font-size: 100%;
   line-height: 133%;
-}
-
-mat-card {
-  position: fixed;
-  top: 0;
-  left: 50%;
-
-  width: 75%;
-
-  font-size: 150%;
-
-  transform: translate(-50%);
-
-  margin-top: 1rem;
-
-  opacity: 0;
-  transition: opacity 0.4s;
-
-  z-index: 10;
 }

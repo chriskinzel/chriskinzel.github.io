@@ -116,6 +116,45 @@ mat-card:nth-child(6) {
   }
 }
 
+@media (max-width: 1095px) {
+  mat-sidenav-content {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  mat-sidenav-content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (max-width: 953px) {
+  mat-sidenav-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 921px) {
+  mat-card {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 862px) {
+  mat-card {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 821px) {
+  mat-card {
+    font-size: 0.7rem;
+  }
+}
+
 @media (max-width: 768px) {
   mat-sidenav-content {
     padding: 0;
@@ -125,6 +164,7 @@ mat-card:nth-child(6) {
     padding: 2rem;
     font-size: 0.75rem;
     --header-undent: 0;
+    border-radius: 0;
   }
   mat-card:last-child {
     margin-bottom: 0;
@@ -134,7 +174,6 @@ mat-card:nth-child(6) {
 @media (max-width: 690px) {
   mat-card {
     font-size: 0.6rem;
-    border-radius: 0;
   }
 
   mat-list {

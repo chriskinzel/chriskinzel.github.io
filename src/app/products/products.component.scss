@@ -15,11 +15,22 @@ p {
 }
 
 .project-grid {
+  --grid-gap: 2rem;
+
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+  grid-template-columns: calc(50% - var(--grid-gap) / 2) calc(
+      50% - var(--grid-gap) / 2
+    );
+  grid-gap: var(--grid-gap);
 
   margin-bottom: 3rem;
+}
+
+ck-project-item:nth-child(odd) {
+  --is-right-child: 0;
+}
+ck-project-item:nth-child(even) {
+  --is-right-child: 1;
 }
 
 ck-project-item[name="CSI Dry Eye"] {
