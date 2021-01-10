@@ -20,6 +20,6 @@ function cleanup() {
 
 trap cleanup TERM EXIT
 
-(git branch -D "$target"; git checkout -b "$target") > /dev/null 2>&1 && echo 'Building...' && npx ng build --prod && (git ls-tree -r "$target" --name-only | grep -vE '^\.git(ignore|lab-ci\.yml)' | xargs rm || true) && mv ./dist/personal-website/* ./ && echo 'Pushing files...' && git add . && git commit -m 'Deploying' > /dev/null 2>&1 && git push -f origin "$target" && echo '\nDeployment complete!'
+(git branch -D "$target"; git checkout -b "$target") > /dev/null 2>&1 && echo 'Building...' && npx ng build --prod && (git ls-tree -r "$target" --name-only | grep -vE '^\.git(ignore|lab-ci\.yml)' | xargs rm || true) && mv ./dist/personal-website/* ./ && touch .nojekyll && echo 'Pushing files...' && git add . && git commit -m 'Deploying' > /dev/null 2>&1 && git push -f origin "$target" && echo '\nDeployment complete!'
 
 cleanup
