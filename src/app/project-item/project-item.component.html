@@ -3,30 +3,63 @@
   [class.card-style]="shouldUseCardDisplay | async"
   [class.enlarged]="isEnlarged"
 >
-  <img class="project-img" [src]="imageUrl" (click)="toggleEnlarge($event)"/>
+  <img
+    class="project-img"
+    alt="{{ name }} banner image"
+    [src]="imageUrl"
+    (click)="toggleEnlarge($event)"
+  />
   <div class="project-info" (click)="$event.stopPropagation()">
     <h1>{{ name }}</h1>
     <div class="project-tech">
       <img
         src="assets/images/angular.png"
+        alt="Angular icon"
         class="tech-icon"
         *ngIf="usesAngular"
       />
-      <img src="assets/images/aws.png" class="tech-icon" *ngIf="usesAWS" />
+      <img
+        src="assets/images/aws.png"
+        alt="AWS icon"
+        class="tech-icon"
+        *ngIf="usesAWS"
+      />
       <img
         src="assets/images/nodejs.png"
+        alt="NodeJS icon"
         class="tech-icon"
         *ngIf="usesNodeJs"
       />
-      <img src="assets/images/ios.png" class="tech-icon" *ngIf="usesiOS" />
+      <img
+        src="assets/images/ios.png"
+        alt="iOS icon"
+        class="tech-icon"
+        *ngIf="usesiOS"
+      />
       <img
         src="assets/images/android.png"
+        alt="Android icon"
         class="tech-icon"
         *ngIf="usesAndroid"
       />
-      <img src="assets/images/rails.png" class="tech-icon" *ngIf="usesRails" />
-      <img src="assets/images/spark.png" class="tech-icon" *ngIf="usesSpark" />
-      <img src="assets/images/webgl.png" class="tech-icon" *ngIf="usesWebGL" />
+      <img
+        src="assets/images/rails.png"
+        alt="Ruby on Rails icon"
+        class="tech-icon"
+        *ngIf="usesRails"
+      />
+      <img
+        src="assets/images/spark.png"
+        alt="Java Spark icon"
+        class="tech-icon"
+        *ngIf="usesSpark"
+      />
+      <img
+        src="assets/images/webgl.png"
+        alt="WebGL icon"
+        class="tech-icon"
+        *ngIf="usesWebGL"
+      />
     </div>
     <p><ng-content></ng-content></p>
   </div>
